@@ -36,7 +36,7 @@ By the end of this lab, you will:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/jd985854/basic-http-auth-lab
+git clone https://github.com/jd985854/basic-http-auth-lab.git
 cd basic-auth-lab
 
 2️⃣ Start the Server
