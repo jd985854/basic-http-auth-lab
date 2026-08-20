@@ -1,4 +1,12 @@
-# 🔐 HTTP Basic Authentication Lab
+## 🔄 HTTP Basic Authentication Flow
+
+The lab demonstrates the complete HTTP Basic Authentication workflow.
+
+### 1️⃣ Client Requests Protected Resource
+
+```http
+GET /admin HTTP/1.1
+Host: 127.0.0.1:8080# 🔐 HTTP Basic Authentication Lab
 
 A hands-on cybersecurity lab demonstrating how **HTTP Basic Authentication** works at the HTTP protocol level.
 
