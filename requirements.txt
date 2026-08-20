@@ -1,0 +1,4 @@
+# No external dependencies required.
+# Uses Python standard library:
+# - http.server
+# - base64
