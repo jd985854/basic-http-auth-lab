@@ -36,16 +36,15 @@ By the end of this lab, you will:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone <YOUR-REPOSITORY-URL>
+git clone https://github.com/jd985854/basic-http-auth-lab
 cd basic-auth-lab
 
 2️⃣ Start the Server
-bash
 
+```bash
 python3 server.py
 
 You should see:
-text
 
 [+] HTTP Basic Auth Lab running at http://127.0.0.1:8080
 [+] Protected endpoint: http://127.0.0.1:8080/admin
@@ -53,8 +52,8 @@ text
 [+] Password: 123456
 
 3️⃣ Alternative: Run Script
-bash
 
+```bash
 chmod +x run.sh
 ./run.sh
 
@@ -68,24 +67,24 @@ http://127.0.0.1:8080/admin
 The /admin route is protected with HTTP Basic Authentication.
 🧪 Practical Tests
 ✅ Without Credentials
-bash
 
+```bash
 curl -i http://127.0.0.1:8080/admin
 
 Expected response:
-text
+
 
 HTTP/1.0 401 Unauthorized
 WWW-Authenticate: Basic realm="Admin"
 
 This is the authentication challenge.
 ✅ With Credentials
-bash
+```bash
 
 curl -i -u john:123456 http://127.0.0.1:8080/admin
 
 Expected response:
-text
+
 
 HTTP/1.0 200 OK
 Content-Type: text/html
@@ -95,8 +94,7 @@ The protected page is returned.
 ✅ Manually Construct the Authorization Header
 
 Instead of -u, send the header directly:
-bash
-
+```bash
 curl -i -H "Authorization: Basic am9objoxMjM0NTY=" http://127.0.0.1:8080/admin
 
 The Base64 value am9objoxMjM0NTY= decodes to john:123456.
@@ -109,17 +107,14 @@ bash
 echo -n 'john:123456' | base64
 
 Output:
-text
 
 am9objoxMjM0NTY=
 
 Decode it:
-bash
-
+```bash
 echo 'am9objoxMjM0NTY=' | base64 -d
 
 Output:
-text
 
 john:123456
 
@@ -144,13 +139,13 @@ Authorisation	       "What can the user do?"
     Observe the initial 401 response and the subsequent request with the Authorization header.
 
 Example request:
-text
 
 GET /admin HTTP/1.1
 Host: 127.0.0.1:8080
 Authorization: Basic am9objoxMjM0NTY=
 
 Decode the Base64 part in Burp’s Inspector or manually.
+
 ⚠️ Security Implications
 
     HTTP + Basic Auth = credentials are sent in plaintext (Base64 only, easily decoded)
